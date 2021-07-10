@@ -1,0 +1,236 @@
+{{ block title }}
+    Lottory
+{{ endblock }}
+
+{{ block content }}
+<p>
+       The experiment consists of two kinds of stocks, that is stock A and Stock B.
+    On investing, there is going to be a price change of a both stocks, falling/decreasing and increasing
+    and after each price change, make a decision. There are probabilities that you have
+    to look at before making a decision to buy/sell or do nothing, probability is between 0 and 1.
+    Point zero in the table is the allocation point in which the participant has to decide the
+    amount of Stock A and Stock B he/she wants to hold.
+    For example; holding 2 stocks A and 3 stocks B.
+    </p>
+<div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5>Table 1A:</h5>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>No </th>
+                            <th>Probability outcomes of stocks </th>
+                            <th>Stock A </th>
+                            <th>Stock B </th>
+                            <th>Decisions (Buy; Sell; Intact)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td rowspan="12">
+                            </td>
+                            <td></td>
+                            <td>Market Price of Stock</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                             <td>0</td>
+                            <td>Allocation Point</td>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>65% prob to rise and 35% to fall</td>
+                            <td>{% formfield player.no_1_stock_a %}</td>
+                            <td>{% formfield player.no_1_stock_b %}</td>
+                            <td align="center">{% formfield player.get_1 %}</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>75% prob to rise and 25% to fall</td>
+                            <td>{% formfield player.no_2_stock_a %}</td>
+                            <td>{% formfield player.no_2_stock_b %}</td>
+                            <td align="center">{% formfield player.get_2 %}</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>45% prob to rise and 55% to fall</td>
+                            <td>{% formfield player.no_3_stock_a %}</td>
+                            <td>{% formfield player.no_3_stock_b %}</td>
+                            <td align="center">{% formfield player.get_3 %}</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>35% prob to rise and 65% to fall</td>
+                            <td>{% formfield player.no_4_stock_a %}</td>
+                            <td>{% formfield player.no_4_stock_b %}</td>
+                            <td align="center">{% formfield player.get_4 %}</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>50% prob to rise and 50% to fall</td>
+                            <td>{% formfield player.no_5_stock_a %}</td>
+                            <td>{% formfield player.no_5_stock_b %}</td>
+                            <td align="center">{% formfield player.get_5 %}</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>55% prob to rise and 45% to fall</td>
+                            <td>{% formfield player.no_6_stock_a %}</td>
+                            <td>{% formfield player.no_6_stock_b %}</td>
+                            <td align="center">{% formfield player.get_6 %}</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>60% prob to rise and 40% to fall</td>
+                            <td>{% formfield player.no_7_stock_a %}</td>
+                            <td>{% formfield player.no_7_stock_b %}</td>
+                            <td align="center">{% formfield player.get_7 %}</td>
+                        </tr>
+                        <tr>
+                             <td>8</td>
+                            <td>30% fall and 70% rise</td>
+                            <td>{% formfield player.no_8_stock_a %}</td>
+                            <td>{% formfield player.no_8_stock_b %}</td>
+                            <td align="center">{% formfield player.get_8 %}</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>75% rise and 25% fall</td>
+                            <td>{% formfield player.no_9_stock_a %}</td>
+                            <td>{% formfield player.no_9_stock_b %}</td>
+                            <td align="center">{% formfield player.get_9 %}</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>90% rise and 10% fall</td>
+                            <td>{% formfield player.no_10_stock_a %}</td>
+                            <td>{% formfield player.no_10_stock_b %}</td>
+                            <td align="center">{% formfield player.get_10 %}</td>
+                        </tr>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br>
+<p>There is going to a new endowment fee that will be determined by the participant’s trading behavior
+    which will be determined by the 10 trading rounds, how much is the value of stock available.
+The next Phase, Phase (ii) will then commence, with the last stock price/round in the previous phase.
+</p>
+            <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5>Table 1B:</h5>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>No </th>
+                            <th>Probability outcomes</th>
+                            <th>Stock A </th>
+                            <th>Stock B </th>
+                            <th>Decisions(Buy; Sell; Intact)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td rowspan="12">
+                            </td>
+                            <td></td>
+                            <td>Market Price of Stock</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                             <td>0</td>
+                            <td>Allocation Point</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>45% rise and 55% fall</td>
+                            <td>{% formfield player.no_1_stock_a_pii %}</td>
+                            <td>{% formfield player.no_1_stock_b_pii %}</td>
+                            <td align="center">{% formfield player.get_1_pii %}</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>25% fall and 75% rise</td>
+                            <td>{% formfield player.no_2_stock_a_pii %}</td>
+                            <td>{% formfield player.no_2_stock_b_pii %}</td>
+                            <td align="center">{% formfield player.get_2_pii %}</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>65% fall and 35% rise</td>
+                            <td>{% formfield player.no_3_stock_a_pii %}</td>
+                            <td>{% formfield player.no_3_stock_b_pii %}</td>
+                            <td align="center">{% formfield player.get_3_pii %}</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>40% rise and 60% fall</td>
+                            <td>{% formfield player.no_4_stock_a_pii %}</td>
+                            <td>{% formfield player.no_4_stock_b_pii %}</td>
+                            <td align="center">{% formfield player.get_4_pii %}</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>85% rise and 15% fall</td>
+                            <td>{% formfield player.no_5_stock_a_pii %}</td>
+                            <td>{% formfield player.no_5_stock_b_pii %}</td>
+                            <td align="center">{% formfield player.get_5_pii %}</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>70% fall and 30% rise</td>
+                            <td>{% formfield player.no_6_stock_a_pii %}</td>
+                            <td>{% formfield player.no_6_stock_b_pii %}</td>
+                            <td align="center">{% formfield player.get_6_pii %}</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>60% rise and 40% fall</td>
+                            <td>{% formfield player.no_7_stock_a_pii %}</td>
+                            <td>{% formfield player.no_7_stock_b_pii %}</td>
+                            <td align="center">{% formfield player.get_7_pii %}</td>
+                        </tr>
+                        <tr>
+                             <td>8</td>
+                            <td>30% fall and 70% rise</td>
+                            <td>{% formfield player.no_8_stock_a_pii %}</td>
+                            <td>{% formfield player.no_8_stock_b_pii %}</td>
+                            <td align="center">{% formfield player.get_8_pii %}</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>75% rise and 25% fall</td>
+                            <td>{% formfield player.no_9_stock_a_pii %}</td>
+                            <td>{% formfield player.no_9_stock_b_pii %}</td>
+                            <td align="center">{% formfield player.get_9_pii %}</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>90% rise and 10% fall</td>
+                            <td>{% formfield player.no_10_stock_a_pii %}</td>
+                            <td>{% formfield player.no_10_stock_b_pii %}</td>
+                            <td align="center">{% formfield player.get_10_pii %}</td>
+                        </tr>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br>
+    {% next_button %}
+{% endblock %}
+
+
